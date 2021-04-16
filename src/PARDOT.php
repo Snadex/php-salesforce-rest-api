@@ -5,7 +5,7 @@ namespace bjsmasth\Salesforce;
 use GuzzleHttp\Client;
 use Exception;
 
-class PARDOT_CRUD
+class PARDOT
 {
     protected $instance_url;
     protected $access_token;
