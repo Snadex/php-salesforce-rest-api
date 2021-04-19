@@ -137,4 +137,23 @@ class CRUD
 
         return true;
     }
+
+    public function apexrest($object, $value, array $data)
+    {
+        $url = "{$this->instance_url}/services/apexrest/{$object}/$value";
+
+        $client = new Client();
+
+        $request = $client->request('POST', $url, [
+            'headers' => [
+                'Authorization' => "OAuth {$this->access_token}",
+                'Content-type' => 'application/json'
+            ],
+            'json' => $data
+        ]);
+
+        $response = json_decode($request->getBody(), true);
+
+        return $response;
+    }
 }
