@@ -157,7 +157,7 @@ class CRUD
         return $response;
     }
 
-    public function apexrest_get($object, $value, array $data)
+    public function apexrest_get($object, $value)
     {
         $url = "{$this->instance_url}/services/apexrest/{$object}/$value";
 
